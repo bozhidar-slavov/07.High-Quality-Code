@@ -43,7 +43,7 @@
         {
             Validator.ValidateNull(student, "Student cannot be null!");
 
-            if (this.Students.Contains(student))
+            if (this.students.Contains(student))
             {
                 throw new InvalidOperationException("This student has been already added!");
             }
@@ -60,7 +60,7 @@
         {
             Validator.ValidateNull(student, "Student cannot be null!");
 
-            if (!this.Students.Contains(student))
+            if (!this.students.Contains(student))
             {
                 throw new InvalidOperationException("The student you want to remove does not exist!");
             }

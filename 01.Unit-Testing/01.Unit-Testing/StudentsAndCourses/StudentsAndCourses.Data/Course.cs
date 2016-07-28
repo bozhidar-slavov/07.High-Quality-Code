@@ -39,12 +39,12 @@
         {
             Validator.ValidateNull(student, "Student cannot be null!");
 
-            if (this.Students.Count + 1 > MaxStudentsCount)
+            if (this.students.Count + 1 > MaxStudentsCount)
             {
                 throw new InvalidOperationException("Student list is full!");
             }
 
-            if (this.Students.Contains(student))
+            if (this.students.Contains(student))
             {
                 throw new InvalidOperationException("This student has already joined the class!");
             }
