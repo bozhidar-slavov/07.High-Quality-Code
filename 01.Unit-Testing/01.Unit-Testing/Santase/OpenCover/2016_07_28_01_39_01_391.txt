@@ -1,0 +1,6 @@
+Santase.Tests.DeckTests.NewDeckShouldContains24Cards
+Santase.Tests.DeckTests.IsTrumpCardValid
+Santase.Tests.DeckTests.ChangeTrumpCardValid
+Santase.Tests.DeckTests.GetNextCardShouldRemoveCardFromTheDeck
+Santase.Tests.DeckTests.GetNextCardShouldThrowExceptionWhenThereAreNoCardsLeft
+Santase.Tests.DeckTests.CardsLeftShouldReturnCorrectValue
