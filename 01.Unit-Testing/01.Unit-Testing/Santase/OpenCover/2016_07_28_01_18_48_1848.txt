@@ -1,1 +1,0 @@
-Santase.Tests.DeckTests.NewDeckShouldContains24Cards
