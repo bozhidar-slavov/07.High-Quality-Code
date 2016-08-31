@@ -2,37 +2,30 @@
 {
     using System;
 
-    public static class StatisticsPrinter
+    public class StatisticsPrinter : IPrinter
     {
-        public static void PrintStatistics(double[] collection, int elementsCount)
+        public void PrintStatistics(double[] collection)
         {
             double maxValue = double.MinValue;
             double minValue = double.MaxValue;
             double sum = 0;
 
-            for (int i = 0; i < elementsCount; i++)
+            int collectionLength = collection.Length;
+            for (int i = 0; i < collectionLength; i++)
             {
-                if (collection[i] > maxValue)
-                {
-                    maxValue = collection[i];
-                }
-
-                if (collection[i] < minValue)
-                {
-                    minValue = collection[i];
-                }
-
+                maxValue = collection[i] > maxValue ? collection[i] : maxValue;
+                minValue = collection[i] < minValue ? collection[i] : minValue;
                 sum += collection[i];
             }
 
             PrintNumber("Max value: ", maxValue);
             PrintNumber("Min value: ", minValue);
 
-            double averageSum = sum / elementsCount;
+            double averageSum = sum / collectionLength;
             PrintNumber("Average: ", averageSum);
         }
 
-        public static void PrintNumber(string message, double number)
+        public void PrintNumber(string message, double number)
         {
             Console.WriteLine($"{message} {number}");
         }
