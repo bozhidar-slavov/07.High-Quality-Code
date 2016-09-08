@@ -8,15 +8,15 @@
 
         internal static double CalculateTriangleArea(double a, double b, double c)
         {
-            bool isNegative = a <= 0 || b <= 0 || c <= 0;
-            bool isInvalidTriangle = a >= b + c || b >= a + c || c >= a + b;
+            bool isPositive = a > 0 || b > 0 || c > 0;
+            bool isValidTriangle = a < b + c && b < a + c && c < b + a;
 
-            if (isNegative)
+            if (!isPositive)
             {
                 throw new ArgumentOutOfRangeException("Sides must be positive numbers!");
             }
 
-            if (isInvalidTriangle)
+            if (!isValidTriangle)
             {
                 throw new ArgumentOutOfRangeException("These sides cannot form a triangle!");
             }
