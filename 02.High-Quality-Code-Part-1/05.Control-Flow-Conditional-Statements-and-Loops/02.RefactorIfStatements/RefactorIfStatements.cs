@@ -1,7 +1,7 @@
 ﻿namespace RefactorIfStatements
 {
     using System;
-     
+
     public class RefactorIfStatements
     {
         public static void Main()
@@ -10,15 +10,17 @@
 
             Potato potato = new Potato();
 
-            if (potato != null)
+            if (potato == null)
             {
-                bool notPeeled = !potato.IsPeeled();
-                bool notRotten = !potato.IsRotten();
+                throw new ArgumentNullException("Potato cannot be null!");
+            }
 
-                if (notPeeled && notRotten)
-                {
-                    potato.Cook();
-                }
+            bool isPeeled = potato.IsPeeled();
+            bool isRotten = potato.IsRotten();
+
+            if (isPeeled && !isRotten)
+            {
+                potato.Cook();
             }
 
             // Second refactoring
